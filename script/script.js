@@ -11,9 +11,14 @@ function createBoard() {
         let cellElement = document.createElement('div')
         cellElement.classList.add('square')
         cellElement.id = index
-        cellElement.addEventListener('click', turn)
+        cellElement.addEventListener('click', mark)
         gameBoard.append(cellElement)
     })
 }
-
 createBoard()
+
+function mark (e){
+    let markDisplay = document.createElement('div')
+    markDisplay.classList.add('circle')
+    e.target.append(markDisplay)
+}
