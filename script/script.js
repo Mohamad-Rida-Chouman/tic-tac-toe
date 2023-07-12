@@ -7,6 +7,7 @@ let emptyCells = [
 ]
 
 let turn = 'circle'
+statusDisplay.textContent = 'Circle, Commence!'
 
 function createBoard() {
     emptyCells.forEach((cell, index) => {
@@ -24,4 +25,5 @@ function mark (e){
     markDisplay.classList.add(turn)
     e.target.append(markDisplay)
     turn = turn === 'circle' ? 'cross' : 'circle'
+    statusDisplay.textContent = 'Dare to make a move, ' + turn + '?'
 }
