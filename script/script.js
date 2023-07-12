@@ -10,6 +10,8 @@ function createBoard() {
     emptyCells.forEach((cell, index) => {
         let cellElement = document.createElement('div')
         cellElement.classList.add('square')
+        cellElement.id = index
+        cellElement.addEventListener('click', turn)
         gameBoard.append(cellElement)
     })
 }
