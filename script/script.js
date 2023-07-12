@@ -6,6 +6,8 @@ let emptyCells = [
     '', '', '', '', '', '', '', '', ''
 ]
 
+let turn = 'circle'
+
 function createBoard() {
     emptyCells.forEach((cell, index) => {
         let cellElement = document.createElement('div')
@@ -19,6 +21,7 @@ createBoard()
 
 function mark (e){
     let markDisplay = document.createElement('div')
-    markDisplay.classList.add('cross')
+    markDisplay.classList.add(turn)
     e.target.append(markDisplay)
+    turn = turn === 'circle' ? 'cross' : 'circle'
 }

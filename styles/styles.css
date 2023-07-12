@@ -47,7 +47,7 @@ body{
 }
 
 .cross:before, .cross:after {
-    content: "";
+    content: '';
     position: absolute;
     background-color: black;
     transform: rotate(45deg);
