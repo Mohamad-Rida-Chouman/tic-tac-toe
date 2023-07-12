@@ -20,10 +20,11 @@ function createBoard() {
 }
 createBoard()
 
-function mark (e){
+function mark (e) {
     let markDisplay = document.createElement('div')
     markDisplay.classList.add(turn)
     e.target.append(markDisplay)
     turn = turn === 'circle' ? 'cross' : 'circle'
     statusDisplay.textContent = 'Dare to make a move, ' + turn + '?'
+    e.target.removeEventListener('click', mark)
 }
