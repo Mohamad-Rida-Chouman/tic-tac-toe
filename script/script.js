@@ -19,6 +19,6 @@ createBoard()
 
 function mark (e){
     let markDisplay = document.createElement('div')
-    markDisplay.classList.add('circle')
+    markDisplay.classList.add('cross')
     e.target.append(markDisplay)
 }
