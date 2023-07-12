@@ -6,6 +6,7 @@
     background-color: black;
     display: flex;
     flex-wrap: wrap;
+    border: solid 1px black;
 }
 
 .square{
@@ -13,5 +14,13 @@
     height: 100px;
     background-color: white;
     border: solid 2px black;
+    box-sizing: border-box;
+}
+
+.circle{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 15px solid black;
     box-sizing: border-box;
 }
