@@ -206,6 +206,9 @@ function reset() {
 
     turn = 'circle'
 
+    
+    document.getElementById("reset").style.display = "none";
+
     createBoard()
 
 }

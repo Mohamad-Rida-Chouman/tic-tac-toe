@@ -81,6 +81,10 @@ h1, #status{
 
 #reset{
     display: none;
+    background-image: url(/assets/play_again.png);
+    background-size: 100% 100%;
+    height: 70px;
+    width: 110px;
 }
 
 #scores{
