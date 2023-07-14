@@ -77,7 +77,7 @@ function checkScore() {
                 statusDisplay.textContent = 'Well played, '+ player_1 +'. Well played!'
                 squares.forEach(square => square.replaceWith(square.cloneNode(true)))
                 player_1_win = player_1_win + 1
-                console.log(player_1_win)
+                document.getElementById("reset").style.display = "block";
             }
         })
 
@@ -88,11 +88,13 @@ function checkScore() {
                 statusDisplay.textContent = 'Magnificient game, '+ player_2 +'!'
                 squares.forEach(square => square.replaceWith(square.cloneNode(true)))
                 player_2_win = player_2_win + 1
+                document.getElementById("reset").style.display = "block";
             }
         })
 
         if (moves == 9 && winnerFound == 0){
             statusDisplay.textContent = 'A truce it is then.'
             squares.forEach(square => square.replaceWith(square.cloneNode(true)))
+            document.getElementById("reset").style.display = "block";
         }
     }
