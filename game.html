@@ -24,9 +24,19 @@
 <body>
     <h1>Tic-Tac-Toe: The Game!</h1>
     
-    <div id="gameBoard"></div>
+    <div id="gameBoard_container">
+        <div id="gameBoard"></div>
+    </div>
     <h3 id="status"></h3>
-    <button type="reset" name="reset" id="reset">Play Again!</button>
+    <button type="reset" name="reset" id="reset" onclick="reset()">Play Again!</button><br>
+
+    <div id="scores">
+        <div id="score_player_1">
+        </div>
+        <div id="splitter">|</div>
+        <div id="score_player_2">
+        </div>
+    </div>
 
     <script src="./script/script-game.js"></script>
 </body>

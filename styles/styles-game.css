@@ -78,3 +78,22 @@ h1, #status{
 #reset{
     display: none;
 }
+
+#scores{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(210, 180, 140, 0.8);
+    gap: 20px;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #6d3c0c;
+    
+}
+
+#splitter{
+    height: 100%;
+    font-size: 32px;
+}
