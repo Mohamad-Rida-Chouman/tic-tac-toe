@@ -48,12 +48,16 @@ h1, #status{
     width: 100px;
     height: 100px;
     background-color: white;
-    border: solid 2px black;
+    border: 5px outset #6d3c0c;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.winning_squares{
+    background-color:burlywood;
 }
 
 /* Styling the marks */

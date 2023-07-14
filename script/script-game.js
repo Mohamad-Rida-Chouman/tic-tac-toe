@@ -37,7 +37,6 @@ function score_modify() {
     // create new elements
     p1_score = document.createElement('div')
     p1_score.id = "score_player_1"
-    // p1_score = document.getElementById("score_player_1")
     p1_score.innerHTML = player_1.concat(': '+player_1_win)
 
     splitter = document.createElement('div')
@@ -46,7 +45,6 @@ function score_modify() {
 
     p2_score = document.createElement('div')
     p2_score.id = "score_player_2"
-    // p2_score = document.getElementById("score_player_1")
     p2_score.innerHTML = player_2.concat(': '+player_2_win)
 
     //append new elements
@@ -68,15 +66,15 @@ function score_modify() {
 score_modify()
 
 function createBoard() {
-
+    // create cells
     emptyCells.forEach((cell, index) => {
-
+        // assign div and index to each cell
         let cellElement = document.createElement('div')
         
         cellElement.classList.add('square')
         
         cellElement.id = index
-
+        
         cellElement.addEventListener('click', mark)
         
         gameBoard.append(cellElement)
@@ -84,6 +82,7 @@ function createBoard() {
 }
 createBoard()
 
+//define next player mark and turn
 function mark (e) {
     
     let markDisplay = document.createElement('div')
@@ -107,8 +106,8 @@ function mark (e) {
 }
 
 function checkScore() {
+
     moves = moves + 1
-    console.log(moves)
 
     let squares = document.querySelectorAll('.square')
     let winCombos = [
@@ -116,8 +115,8 @@ function checkScore() {
         [0,3,6], [1,4,7], [2,5,8],
         [0,4,8], [2,4,6]
     ]
-    
 
+    //circle win condition
     winCombos.forEach(array => {
         let winCircle = array.every(cell => squares[cell].firstChild?.classList.contains('circle'))
         if (winCircle) {
@@ -127,9 +126,18 @@ function checkScore() {
             player_1_win = player_1_win + 1
             score_modify()
             document.getElementById("reset").style.display = "block";
+            // define and apply color to winning combo
+            winningCombo = array
+            let single_sq = document.getElementById(winningCombo[0])
+            single_sq.style.backgroundColor = 'gold'
+            single_sq = document.getElementById(winningCombo[1])
+            single_sq.style.backgroundColor = 'gold'
+            single_sq = document.getElementById(winningCombo[2])
+            single_sq.style.backgroundColor = 'gold'
         }
     })
 
+    //cross win condition
     winCombos.forEach(array => {
         let winCross = array.every(cell => squares[cell].firstChild?.classList.contains('cross'))
         if (winCross) {
@@ -139,9 +147,18 @@ function checkScore() {
             player_2_win = player_2_win + 1
             score_modify()
             document.getElementById("reset").style.display = "block";
+            // defining and applying color to winning combo
+            winningCombo = array
+            let single_sq = document.getElementById(winningCombo[0])
+            single_sq.style.backgroundColor = 'gold'
+            single_sq = document.getElementById(winningCombo[1])
+            single_sq.style.backgroundColor = 'gold'
+            single_sq = document.getElementById(winningCombo[2])
+            single_sq.style.backgroundColor = 'gold'
         }
     })
 
+    //draw condition
     if (moves == 9 && winnerFound == 0){
         statusDisplay.textContent = 'A truce it is then.'
         squares.forEach(square => square.replaceWith(square.cloneNode(true)))
@@ -153,6 +170,7 @@ function checkScore() {
 
 function reset() {
 
+    //initialize all variable as new
     let old_gameboard = document.getElementById("gameBoard");
     old_gameboard.remove();
 
