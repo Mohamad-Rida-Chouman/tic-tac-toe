@@ -18,9 +18,9 @@ body{
     gap: 10px;
 }
 
-#player-1, #player-2 {
+#player_1, #player_2 {
     height: 25px;
-    width: 60%;
+    width: 30%;
 }
 
 /* Styling the game board */

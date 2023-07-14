@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe Game</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Tic-Tac-Toe: The Game!</title>
+    <link rel="stylesheet" href="./styles/styles-game.css">
+    <script>
+        function getParams() {
+            var idx = document.URL.indexOf('?');
+            var params = new Array();
+            if (idx != -1) {
+                var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+                for (var i=0; i<pairs.length; i++) {
+                    nameVal = pairs[i].split('=');
+                    params[nameVal[0]] = nameVal[1];
+                }
+            }
+            return params;
+        }
+        params = getParams();
+    </script>
 </head>
 <body>
     <h1>Tic-Tac-Toe: The Game!</h1>
+    
     <div id="gameBoard"></div>
     <h3 id="status"></h3>
-    
-    <script src="./script/script.js"></script>
+    <button type="reset" name="reset" id="reset">Play Again!</button>
+
+    <script src="./script/script-game.js"></script>
 </body>
 </html>

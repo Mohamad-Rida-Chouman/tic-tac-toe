@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe Main</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Tic-Tac-Toe: Main!</title>
+    <link rel="stylesheet" href="styles/styles-index.css">
 </head>
 <body>
-    <h1 id="title">Welcome to Tic-Tac-Toe!</h1>
-    <div id="players">
-            <input type="text" name="player-1" id="player-1" placeholder="First warrior, state your name">
-            <input type="text" name="player-2" id="player-2" placeholder="Second warrior, state your name">
-    </div>
-    <script src="./script/script.js"></script>
+    <h1 id="main_title">
+        Welcome, Brave Warriors.
+    </h1>
+
+    <h3 id="main_title_caption">
+        Get ready for a fierce fight!
+    </h3>
+
+    <form action="game.html" method="GET">
+        <h3>Tell me your name, brave warrior!</h3>
+        <input type="text" name="player_1" id="player_1" placeholder="Warrior, state your name">
+        <h3>Rival, state your name!</h3>
+        <input type="text" name="player_2" id="player_2" placeholder="Rival, state your name">
+        <button type="submit" id="submit">Start Game!</button>
+    </form>
+
 </body>
 </html>
