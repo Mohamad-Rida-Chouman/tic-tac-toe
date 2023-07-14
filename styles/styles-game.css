@@ -6,6 +6,16 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url(/assets/bg.jpg);
+    background-size: cover;
+}
+
+h1, #status{
+    background-color: #d2b48c;
+    color: #905923;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Styling index page */
